@@ -28,8 +28,12 @@ const ReceivedMessage = (req, res) => {
         var value = changes["value"];// hasta llega a la informacion q recivimos de la app
         console.log(value);
         var messageObject = value["messages"];
+        console.log("segundo " + messageObject);
+
 
         if (typeof messageObject != "undefined") {
+            console.log("dentro " + number + " el mensaje " messages);
+
             var messages = messageObject[0];
             var number = messages["from"];
 
