@@ -32,7 +32,7 @@ const ReceivedMessage = (req, res) => {
 
 
         if (typeof messageObject != "undefined") {
-            console.log("dentro " + number + " el mensaje " messages);
+            console.log("dentro " + number + " el mensaje " + messages);
 
             var messages = messageObject[0];
             var number = messages["from"];
@@ -45,6 +45,7 @@ const ReceivedMessage = (req, res) => {
         res.send("EVENT_RECEIVED");
     } catch (e) {
         console.log(e);
+        console.log ("se salio de la condicional")
         res.send("EVENT_RECEIVED");
     }
 }
