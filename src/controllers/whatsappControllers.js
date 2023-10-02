@@ -38,6 +38,7 @@ const ReceivedMessage = (req, res) => {
 
             console.log(text);
             whatsappService.SendMessageWhatsApp("esto es una prueba", 584147571696);
+            console.log("fin del envio");
         }
 
         res.send("EVENT_RECEIVED");
