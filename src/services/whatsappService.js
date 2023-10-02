@@ -1,17 +1,12 @@
 const https = require("https");
 function SendMessageWhatsApp(textResponse, number) {
-
     const data = JSON.stringify({
-
         "messaging_product": "whatsapp",
-        "recipient_type": "individual",
         "to": number,
-        "type": "text",
         "text": {
-            "preview_url": false,
             "body": textResponse
-
-        }
+        },
+        "type": "text"
 
     });
 
@@ -26,6 +21,7 @@ function SendMessageWhatsApp(textResponse, number) {
         }
     };
 
+    console.log("estamos armando el json")
     const req = https.request(options, res => {
         res.on("data", d => {
             process.stdout.write(d);
@@ -38,6 +34,7 @@ function SendMessageWhatsApp(textResponse, number) {
 
     req.write(data);
     req.end();
+    console.log("salimos de aqui")
 }
 module.exports = {
     SendMessageWhatsApp
