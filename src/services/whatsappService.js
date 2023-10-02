@@ -34,7 +34,7 @@ function SendMessageWhatsApp(textResponse, number) {
 
     req.write(data);
     req.end();
-    console.log("salimos de aqui los datos son mensaje:"+ textResponse "y el telefono " + number)
+    console.log("salimos de aqui los datos son mensaje:" + textResponse + "y el telefono " + number)
 
 }
 module.exports = {
