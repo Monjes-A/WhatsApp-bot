@@ -37,13 +37,13 @@ const ReceivedMessage = (req, res) => {
             console.log("dentro " + number + " el mensaje " + text);
 
             console.log(text);
-            whatsappService.SendMessageWhatsApp("el usuario dijo " + number, number)
+            whatsappService.SendMessageWhatsApp("esto es una prueba", 584147571696);
         }
 
         res.send("EVENT_RECEIVED");
     } catch (e) {
         console.log(e);
-        console.log ("se salio de la condicional")
+        console.log("se salio de la condicional")
         res.send("EVENT_RECEIVED");
     }
 }
@@ -55,7 +55,7 @@ function GetTexUser(messages) { // me dice q tipo de mensanje y q mensaje envio 
 
     if (typeMessage == "text") {
         text = (messages["text"])["body"];
-        console.log ("efectivamente es un text y dice " + text);
+        console.log("efectivamente es un text y dice " + text);
     }
     else if (typeMessage = "interactive") {
 
