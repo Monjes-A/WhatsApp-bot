@@ -21,23 +21,21 @@ const verifyToken = (req, res) => {
 }
 
 const ReceivedMessage = (req, res) => {
-    console.log("holis")
     try {
         var entry = (req.body["entry"])[0];// de aqui hasta el otro comentario 
         var changes = (entry["changes"])[0];//lo q se hace es navegar en el formato json de whatsapp
         var value = changes["value"];// hasta llega a la informacion q recivimos de la app
-        console.log(value);
         var messageObject = value["messages"];
-        console.log("segundo " + messageObject);
 
 
         if (typeof messageObject != "undefined") {
-            console.log("dentro " + number + " el mensaje " + messages);
 
             var messages = messageObject[0];
             var number = messages["from"];
 
             var text = GetTexUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
+            console.log("dentro " + number + " el mensaje " + messages);
+
             console.log(text);
             whatsappService.SendMessageWhatsApp("el usuario dijo " + text, number)
         }
@@ -63,7 +61,7 @@ function GetTexUser(messages) { // me dice q tipo de mensanje y q mensaje envio 
 
         var interactiveObject = messages["interactive"];
         var typeInteractive = interactiveObject["type"];
-        console.log(interactiveObject);
+        console.log("es un mensaje interactivo");
 
         if (typeInteractive == "button_reply") {
             text = (interactiveObject["button_reply"])["title"];
