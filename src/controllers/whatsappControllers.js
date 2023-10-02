@@ -13,15 +13,16 @@ const verifyToken = (req, res) => {
         if (challenge != null && token != null && token == accessToken) {
             res.send(challenge);
         } else {
-            res.status(420).send();
+            res.status(400).send();
         }
     }
     catch (e) {
-        res.status(430).send();
+        res.status(400).send();
     }
 }
 
 const ReceivedMessage = (req, res) => {
+    console.log("holis")
     try {
         var entry = (req.body["entry"])[0];// de aqui hasta el otro comentario 
         var changes = (entry["changes"])[0];//lo q se hace es navegar en el formato json de whatsapp
