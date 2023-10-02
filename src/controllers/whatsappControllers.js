@@ -57,7 +57,7 @@ function GetTexUser(messages) { // me dice q tipo de mensanje y q mensaje envio 
 
     if (typeMessage == "text") {
         text = (messages["text"])["body"];
-        console.log ("efectivamente es un text");
+        console.log ("efectivamente es un text y dice " + text);
     }
     else if (typeMessage = "interactive") {
 
