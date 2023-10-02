@@ -1,7 +1,6 @@
 //esta parte del codigo es fija , ya q es para la autenticacion del token q va conectado
 //entre hosting y el whatsapp
 const fs = require("fs");
-const myConsole = new console.Console(fs.createWriteStream("./logs.txt"));
 const whatsappService = require("../services/whatsappService");
 const verifyToken = (req, res) => {
 
@@ -35,13 +34,13 @@ const ReceivedMessage = (req, res) => {
             var number = messages["from"];
 
             var text = GetTexUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
-            myConsole.log(text);
+            console.log(text);
             whatsappService.SendMessageWhatsApp("el usuario dijo " + text, number)
         }
 
         res.send("EVENT_RECEIVED");
     } catch (e) {
-        myConsole.log(e);
+        console.log(e);
         res.send("EVENT_RECEIVED");
     }
 }
@@ -58,7 +57,7 @@ function GetTexUser(messages) { // me dice q tipo de mesanje y q mensaje envio e
 
         var interactiveObject = messages["interactive"];
         var typeInteractive = interactiveObject["type"];
-        myConsole.log(interactiveObject);
+        console.log(interactiveObject);
 
         if (typeInteractive == "button_reply") {
             text = (interactiveObject["button_reply"])["title"];
@@ -67,10 +66,10 @@ function GetTexUser(messages) { // me dice q tipo de mesanje y q mensaje envio e
         if (typeInteractive == "list_reply") {
             text = (interactiveObject["list_reply"])["title"];
         } else {
-            myConsole.log("sin mensaje");
+            console.log("sin mensaje");
         }
     } else {
-        myConsole.log("sin mensaje");
+        console.log("sin mensaje");
 
     }
 
