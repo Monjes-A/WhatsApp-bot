@@ -21,36 +21,19 @@ function SendMessageWhatsApp(textResponse, number) {
         }
     };
 
-    console.log("estamos armando el json")
     const req = https.request(options, res => {
-
-
-        Console.log("---------------------------------------------");
-        Console.log("headers", res.headers);
-        Console.log("---------------------------------------------");
-        Console.log("data:", data);
-        Console.log("---------------------------------------------");
-        Console.log("options:", options);
-        Console.log("---------------------------------------------");
-        Console.log("https status code", res.statusCode);
-        Console.log("---------------------------------------------");
-
-        Console.log("https status code", res.statusCode);
-        Console.log("---------------------------------------------");
-
         res.on("data", d => {
             process.stdout.write(d);
         });
     });
 
     req.on("error", error => {
-        console.log("mielda un error")
+
         console.error(error);
     });
 
     req.write(data);
     req.end();
-    console.log("salimos de aqui los datos son mensaje:" + textResponse + "y el telefono " + number)
 
 }
 module.exports = {
