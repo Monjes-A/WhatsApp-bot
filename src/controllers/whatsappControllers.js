@@ -1,5 +1,7 @@
 //esta parte del codigo es fija , ya q es para la autenticacion del token q va conectado
 //entre hosting y el whatsapp
+const fs = require("fs");
+const myConsole = new console.Console(fs.createWriteStream("./logs.txt"));
 const whatsappService = require("../services/whatsappService");
 const verifyToken = (req, res) => {
 
