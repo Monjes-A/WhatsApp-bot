@@ -39,6 +39,7 @@ function SendMessageWhatsApp(textResponse, number) {
     });
 
     req.on("error", error => {
+        console.log("mielda un error")
         console.error(error);
     });
 
