@@ -23,6 +23,16 @@ function SendMessageWhatsApp(textResponse, number) {
 
     console.log("estamos armando el json")
     const req = https.request(options, res => {
+
+        Console.log("https status code", res.statusCode);
+        Console.log("https status code", res.statusCode);
+        Console.log("---------------------------------------------");
+        Console.log("headers", res.headers);
+        Console.log("---------------------------------------------");
+        Console.log("data:", data);
+        Console.log("---------------------------------------------");
+        Console.log("options:", options);
+        Console.log("---------------------------------------------");
         res.on("data", d => {
             process.stdout.write(d);
         });
