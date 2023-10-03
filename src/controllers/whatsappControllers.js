@@ -37,7 +37,7 @@ const ReceivedMessage = (req, res) => {
 
             var text = GetTextUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
 
-            whatsappService.SendMessageWhatsApp(text,number);
+            whatsappService.SendMessageWhatsApp("el usuario dice q dijiste " + text, number);
             console.log("el text es " + text);
         }
 
@@ -60,7 +60,7 @@ function GetTextUser(messages) {
 
         var interactiveObject = messages["interactive"];
         var typeInteractive = interactiveObject["type"];
-        myConsole.log(interactiveObject);
+        Console.log(interactiveObject);
 
         if (typeInteractive == "button_reply") {
             text = (interactiveObject["button_reply"])["title"];
@@ -68,10 +68,11 @@ function GetTextUser(messages) {
         else if (typeInteractive == "list_reply") {
             text = (interactiveObject["list_reply"])["title"];
         } else {
-            myConsole.log("sin mensaje");
+            Console.log("sin mensaje");
+
         }
     } else {
-        myConsole.log("sin mensaje");
+        Console.log("sin mensaje");
     }
     return text;
 }
