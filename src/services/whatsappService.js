@@ -33,6 +33,7 @@ function SendMessageWhatsApp(textResponse, number) {
     req.on("error", error => {
 
         console.error(error);
+        console.log("un pinchis error")
     });
 
     req.write(data);
