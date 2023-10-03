@@ -24,7 +24,7 @@ const ReceivedMessage = (req, res) => {
     try {
         var entry = (req.body["entry"])[0];// de aqui hasta el otro comentario 
         var changes = (entry["changes"])[0];//lo q se hace es navegar en el formato json de whatsapp
-        var value = changes["value"];// hasta llega a la informacion q recivimos de la app
+        var value = changes["value"];// hasta llegar a la informacion q recivimos de la app
         var messageObject = value["messages"];
 
 
