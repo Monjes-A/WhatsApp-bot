@@ -24,6 +24,8 @@ function SendMessageWhatsApp(textResponse, number) {
 
     const req = https.request(options, res => {
         res.on("data", d => {
+
+            console.log("estamos aqui viendo json" +options)
             process.stdout.write(d);
         });
     });
