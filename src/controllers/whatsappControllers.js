@@ -33,7 +33,7 @@ const ReceivedMessage = (req, res) => {
             var messages = messageObject[0];
             var number = messages["from"];
 
-            var text = GetTexUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
+            var text = GetTextUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
 
             whatsappService.SendMessageWhatsApp("esto es una prueba", 584147571696);
             console.log("el text es " + text);
