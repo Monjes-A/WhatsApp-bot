@@ -14,7 +14,7 @@ function SendMessageWhatsApp(textResponse, number) {
 
     const options = {
         host: "graph.facebook.com",
-        path: "v17.0/115566168307697/messages",
+        path: "/v17.0/115566168307697/messages",
         method: "POST",
         body: data,
         headers: {
