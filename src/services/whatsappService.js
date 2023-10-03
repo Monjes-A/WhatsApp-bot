@@ -1,6 +1,6 @@
 const https = require("https");
 function SendMessageWhatsApp(textResponse, number) {
-    console.log("numero " + number +" y la nformacion"+ textResponse)
+    console.log("numero " + number + " y la nformacion" + textResponse)
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
         "to": number,
@@ -10,7 +10,7 @@ function SendMessageWhatsApp(textResponse, number) {
         "type": "text",
 
     });
-    console.log ("imprimiendo el data en json" + data)
+    console.log("imprimiendo el data en json" + data)
 
     const options = {
         host: "graph.facebook.com",
@@ -19,10 +19,10 @@ function SendMessageWhatsApp(textResponse, number) {
         body: data,
         headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer EABY9pvWHDkUBO7W2fbPuprda3xHiFxvK0eUD3NPXfZCWwjj9BU54vuoZCuAsQfdibDGcismHs5sYZAC0ZCErBy6KDkC6irpUcxbVk8RYDpLXJ9ZCLcuxYUayloK63eV9Wh9bNllYw5u2ZCn6cuC9VNhzBdV0fzqTHVpYMTrqrVEgaURZAcisNFZCePzjb31xeceJ"
+            Authorization: "Bearer EABY9pvWHDkUBO9ROwjPPEXLmNKGXv7jf45tnmyXUti7MDLbjAeHhc7mC5J2ZBY7fVTWFmsJaJZATZC9RaheXofjm5SAkgHgXrK4OnifuMXu09BOJZATLciC0eUw0iCcZBDwG0gFGSjKpnv76RPh8GUZADSDOWKjD2wG6eL0bEzJIC3dcvZA5ZBfZATzpWfLDeZAladivC2NZCGssdz3vWgF2vsZD"
         }
     };
-    console.log ("imprimiendo el options en json" + options)
+    console.log("imprimiendo el options en json" + options)
 
     const req = https.request(options, res => {
         res.on("data", d => {
