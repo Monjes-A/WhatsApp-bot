@@ -40,6 +40,7 @@ const ReceivedMessage = (req, res) => {
 
             if (text == "text") {
                 var data = Samples.SampleText("hola usuario", number)
+                console.log("se enviara un text")
                 whatsappService.SendMessageWhatsApp(data);
             }
 
