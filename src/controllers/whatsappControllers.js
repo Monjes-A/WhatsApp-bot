@@ -2,6 +2,7 @@
 //entre hosting y el whatsapp
 const fs = require("fs");
 const whatsappService = require("../services/whatsappService");
+const Samples = require("../shared/sampleModels")
 
 /**req es lo que nos envia whatsapp, mientras que el res es lo que podemos responder*/
 const verifyToken = (req, res) => {
@@ -37,8 +38,11 @@ const ReceivedMessage = (req, res) => {
 
             var text = GetTextUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
 
-            whatsappService.SendMessageWhatsApp("el usuario dice q dijiste " + text, number);
-            console.log("el text es " + text);
+            if (text == "text") {
+                var data = Samples.SampleText("hola usuario", number)
+                whatsappService.SendMessageWhatsApp(data);
+            }
+
         }
 
         res.send("EVENT_RECEIVED");
