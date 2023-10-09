@@ -1,8 +1,9 @@
-//esta parte del codigo es fija , ya q es para la autenticacion del token q va conectado
-//entre hosting y el whatsapp
-const fs = require("fs");
-const whatsappService = require("../services/whatsappService");
-const Samples = require("../shared/sampleModels")
+/* este documento se dedica a la autenticaciones del WhatsApp y consumo de la app para recibir los mensajes
+ */
+
+//esta parte del código es fija , ya q es para la autenticación del token q va conectado
+//entre hosting y el WhatsApp
+const processMessage = require("../shared/processMessage")
 
 /**req es lo que nos envia whatsapp, mientras que el res es lo que podemos responder*/
 const verifyToken = (req, res) => {
@@ -38,10 +39,8 @@ const ReceivedMessage = (req, res) => {
 
             var text = GetTextUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
 
-            if (text == "text") {
-                var data = Samples.SampleText("hola usuario", number)
-                console.log("se enviara un text")
-                whatsappService.SendMessageWhatsApp(data);
+            if (text != "") {
+                processMessage.process(text, number);
             }
 
         }
@@ -58,7 +57,7 @@ const ReceivedMessage = (req, res) => {
 function GetTextUser(messages) {
     var text = "";
     var typeMessage = messages["type"];
-    if (typeMessage == "text") {
+    if (typeMessage == "te xt") {
         text = (messages["text"])["body"];
     }
     else if (typeMessage == "interactive") {

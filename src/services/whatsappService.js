@@ -1,8 +1,12 @@
+/* este documento se va ha dedicar ha realizar los envíos de los mensajes
+previamente estructurados y paso por la lógica de los otros módulos dentro de la app 
+solo se dedica a enviar el mensajes 
+ */
 const https = require("https");
 function SendMessageWhatsApp(data) {
-    /*      ----- ya no se usa esta parte ya q contruiremos nuestra "data" en otro documento   
+    /*      ----- ya no se usa esta parte ya q construiremos nuestra "data" en otro documento   
             const data = JSON.stringify({
-            "messaging_product": "whatsapp",
+            "messaging_product": "WhatsApp",
             "to": number,
             "text": {
                 "body": textResponse
@@ -18,7 +22,7 @@ function SendMessageWhatsApp(data) {
         body: data,
         headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer EABY9pvWHDkUBO6BAFb8QJzAywJaAMVDqHTh2RKrEtxsVgLMRp1gsm3WTxT9QeGDu6iRPQnONKSPEqurWBfsqaomoPkWIAiVPbRvJvxrTPUZCwWtZBZBN8S53L05JkcraIsUvNR0Acvf1eD76ZCJoj0ZB1fGaifQwGwDmbOepderJmQ4fH2jQQlvy9gaNloHxRDmc36WILpgMDVKuSe4cZD"
+            Authorization: "Bearer EABY9pvWHDkUBO10m4SwtDTpOOoXesiCgRVqi6B46Ko6P5pQ4axIRaFxauCcaY3vpeYDnNSsf5rZBg6sEP0qcBArZAggH8TTPfA0fu8qYV8i6RjycoKsatZCbCN259wmkWJbD1koa99sMcNfH4QPxOSR0sfDG8IPwchna7q2T5SETAAZCTeTbCotH4xRsgkdGAvNCfdPRekLB3VgKMj0ZD"
         }
     };
 
