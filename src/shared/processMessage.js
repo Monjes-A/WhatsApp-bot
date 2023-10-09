@@ -9,13 +9,13 @@ function Process(textUser, number) {
     var models = [];
 
 
-    if (textUser.include("hola")) {
+    if (textUser.includes("hola")) {
         //saludar
         var model = whatsappModel.messageText("hola, un gusto atenderte n/ soy una asistente virtual", number)
         models.push(model);
     }
     // despedirse
-    else if (textUser.include("adios") || textUser.include("gracias") || textUser.include("adiós") || textUser.include("hasta luego")) {
+    else if (textUser.includes("adios") || textUser.includes("gracias") || textUser.includes("adiós") || textUser.includes("hasta luego")) {
         var model = whatsappModel.messageText("fue un gusto atenderte.", number);
         models.push(model);
     }
