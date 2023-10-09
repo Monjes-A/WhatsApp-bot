@@ -11,7 +11,7 @@ function Process(textUser, number) {
 
     if (textUser.includes("hola")) {
         //saludar
-        var model = whatsappModel.messageText("hola, un gusto atenderte n/ soy una asistente virtual", number)
+        var model = whatsappModel.messageText("hola, un gusto atenderte /n soy una asistente virtual", number)
         models.push(model);
     }
     // despedirse
