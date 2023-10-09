@@ -40,7 +40,7 @@ const ReceivedMessage = (req, res) => {
             var text = GetTextUser(messages);  //se llama a una función para q nos diga q tipo de mensaje recivio
 
             if (text != "") {
-                processMessage.process(text, number);
+                processMessage.Process(text, number);
             }
 
         }
