@@ -1,10 +1,11 @@
 /* aquí se lleva la lógica de la conversación en la app, para decidir q decirle al cliente */
 
 const whatsappModel = require("../shared/whatsappModels");
-const whatsappService = require("../services/whatsappService")
+const whatsappService = require("../services/whatsappService");
 
 function Process(textUser, number) {
-    textUser = textUser.toLowerCase()
+    console.log("entramos a la lógica");
+    textUser = textUser.toLowerCase();
     var models = [];
 
 
@@ -15,12 +16,12 @@ function Process(textUser, number) {
     }
     // despedirse
     else if (textUser.include("adios") || textUser.include("gracias") || textUser.include("adiós") || textUser.include("hasta luego")) {
-        var model = whatsappModel.messageText("fue un gusto atenderte.", number)
+        var model = whatsappModel.messageText("fue un gusto atenderte.", number);
         models.push(model);
     }
     //no sabe q escribió 
     else {
-        var model = whatsappModel.messageText("no te entiendo chamo", number)
+        var model = whatsappModel.messageText("no te entiendo chamo", number);
         models.push(model);
     }
 
