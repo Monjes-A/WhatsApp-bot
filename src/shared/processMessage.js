@@ -33,5 +33,5 @@ function Process(textUser, number) {
 }
 
 module.exports = {
-    process
+    Process
 };
