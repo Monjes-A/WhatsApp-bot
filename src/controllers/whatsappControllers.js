@@ -57,7 +57,7 @@ const ReceivedMessage = (req, res) => {
 function GetTextUser(messages) {
     var text = "";
     var typeMessage = messages["type"];
-    if (typeMessage == "te xt") {
+    if (typeMessage == "text") {
         text = (messages["text"])["body"];
     }
     else if (typeMessage == "interactive") {
